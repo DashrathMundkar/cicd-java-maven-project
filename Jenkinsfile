@@ -20,6 +20,26 @@ pipeline {
       }
     }
 
+    stage("Run SonarQube Analysis") {
+      steps {
+        script {
+          withSonarQubeEnv('YOUR_SonarQube_INSTALLATION_NAME') {
+            sh 'mvn clean package sonar:sonar'
+          }
+          try {
+            timeout(time: 5, unit: 'MINUTES') { // pipeline will be killed after a timeout
+              def qg = waitForQualityGate()
+              if (qg.status != 'OK') {
+                error "Pipeline aborted due to quality gate failure: ${qg.status}"
+              }
+            }
+          } catch (e) {
+            throw e
+          }
+        }
+      }
+    }
+
     stage("Build Docker Image") {
       steps {
         script {
@@ -35,7 +55,7 @@ pipeline {
       }
     }
 
-    stage("Apply the Kubenetes files") {
+    stage("Apply the Kubernetes files") {
       steps {
         script {
           sh "kubectl apply -f kubernetes/ "
