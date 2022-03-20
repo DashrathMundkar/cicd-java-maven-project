@@ -34,6 +34,14 @@ pipeline {
         }
       }
     }
+
+    stage("Apply the Kubenetes files") {
+      steps {
+        script {
+          sh "kubectl apply -f kubernetes/ "
+        }
+      }
+    }
   }
   post {
     always {

@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cicd-java-maven
+  namespace: cicd-java-maven
+spec:
+  rules:
+    - host: cicd-java-maven.com"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: cicd-java-maven
+                port:
+                  number: 80

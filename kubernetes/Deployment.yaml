@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: cicd-java-maven
+    deployment: cicd-java-maven
+  name: cicd-java-maven
+  namespace: cicd-java-maven
+spec:
+  replicas: 1
+  selector:
+    app: cicd-java-maven
+    deployment: cicd-java-maven
+  strategy:
+    type: Rolling
+  template:
+    metadata:
+      labels:
+        app: cicd-java-maven
+        deployment: cicd-java-maven
+    spec:
+      containers:
+        - image: dash18/cicd-java-maven
+          imagePullPolicy: Always
+          name: cicd-java-maven
+          ports:
+            - containerPort: 8080
+              name: cicd-java-maven
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 512Mi
+            requests:
+              cpu: 100m
+              memory: 256Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
