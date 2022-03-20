@@ -1,2 +1,2 @@
 # cicd-java-maven-project
-This is simple java-maven project for cicd.
+This is simple java-maven project for cicd enviroment such as kubernetes
