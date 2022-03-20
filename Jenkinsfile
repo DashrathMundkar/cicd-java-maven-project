@@ -2,6 +2,11 @@ pipeline {
 
   agent any
 
+  environment {
+    DOCKERHUB_CREDENTIALS=credentials('TestDocker') // Create a credentials in jenkins using your dockerhub username and token from https://hub.docker.com/settings/security
+  }
+
+
   stages {
 
     stage("Git Checkout") {
@@ -20,7 +25,7 @@ pipeline {
       }
     }
 
-    stage("Run SonarQube Analysis") {
+   stage("Run SonarQube Analysis") {
       steps {
         script {
           withSonarQubeEnv('YOUR_SonarQube_INSTALLATION_NAME') {
@@ -40,16 +45,11 @@ pipeline {
       }
     }
 
-    stage("Build Docker Image") {
+    stage("Build & Push Docker Image") {
       steps {
         script {
+          sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
           sh "docker build -t dash18/cicd-java-maven ."
-        }
-      }
-    }
-    stage("Push Docker Image") {
-      steps {
-        script {
           sh "docker push dash18/cicd-java-maven"
         }
       }
