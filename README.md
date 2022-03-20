@@ -1,5 +1,5 @@
 # cicd-java-maven-project
-This is simple java-maven project for cicd enviroment such as kubernetes.
+This is simple java-maven project for cicd enviroment such as kubernetes using jenkins,sonarQube etc.
 
 ### Build and deploy locally 
 
