@@ -1,3 +1,5 @@
+![example workflow](https://github.com/DashrathMundkar/cicd-java-maven-project/actions/workflows/maven.yml/badge.svg)
+
 # cicd-java-maven-project
 This is simple java-maven project for cicd enviroment such as kubernetes using jenkins,sonarQube etc.
 
