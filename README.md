@@ -1,7 +1,7 @@
-#cicd-java-maven-project
+# cicd-java-maven-project
 This is simple java-maven project for cicd enviroment such as kubernetes.
 
-###Build and deploy locally 
+### Build and deploy locally 
 
 1. ```mvn clean install```
 
