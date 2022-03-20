@@ -10,7 +10,7 @@ spec:
     - name: cicd-java-maven
       port: 80
       protocol: TCP
-      targetPort: 8080-tcp
+      targetPort: 8080
   selector:
     app: cicd-java-maven
     deployment: cicd-java-maven
