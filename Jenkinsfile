@@ -20,7 +20,7 @@ pipeline {
     stage("Maven Build") {
       steps {
         script {
-          sh "mvn clean install -T 1C"
+          sh "mvn clean install -T 1C" // -T 1C is to make build faster using multithreading
         }
       }
     }
