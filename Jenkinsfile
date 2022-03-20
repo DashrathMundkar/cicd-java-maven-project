@@ -29,7 +29,7 @@ pipeline {
       steps {
         script {
           withSonarQubeEnv('YOUR_SonarQube_INSTALLATION_NAME') {
-            sh 'mvn clean package sonar:sonar'
+            sh 'mvn clean package sonar:sonar -d qualityProfile='Sonar way''
           }
           try {
             timeout(time: 5, unit: 'MINUTES') { // pipeline will be killed after a timeout
