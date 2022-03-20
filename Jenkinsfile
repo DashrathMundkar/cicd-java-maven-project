@@ -23,14 +23,14 @@ pipeline {
     stage("Build Docker Image") {
       steps {
         script {
-          sh "docker build -t java-project ."
+          sh "docker build -t dash18/cicd-java-maven ."
         }
       }
     }
     stage("Push Docker Image") {
       steps {
         script {
-          sh "docker push java-project"
+          sh "docker push dash18/cicd-java-maven"
         }
       }
     }
