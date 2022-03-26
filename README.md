@@ -34,7 +34,7 @@ This is very basic/simple java-maven project for cicd environment and the purpos
 
 3. Now edit your hosts file from this location on Windows ```C:\Windows\System32\drivers\etc\hosts``` and on Mac/Linux ```sudo vim /etc/hosts``` and add the entry in it ```127.0.0.1 exmaple-test.com```
 
-4. Now access the application on browser ```exmaple-test.com``` now you should see our awesome project text.
+4. Access the application on browser ```exmaple-test.com``` now you should see our awesome project text.
 
 
 ```If you like and want to extend our awesome application then please feel free to contribute :) ```
