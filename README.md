@@ -19,10 +19,10 @@ This is very basic/simple java-maven project for cicd environment and the purpos
 
 ## How to build and deploy on Kubernetes 
 
-1.  First create namesapce ```kubectl apply -f kubernetes/namespace.yaml```
-2.  Then apply rest of the file using from kubernetes folder using ```kubectl apply -f kubernetes/```
-3.  Now check if everything is up and running on our namespace using ```kubectl get all -n cicd-java-maven```
-4.  And make sure our application pod is up and running ```kubectl get pods -n cicd-java-maven```
+1.  First create namesapce by applying yaml file  ```kubectl apply -f kubernetes/namespace.yaml```
+3.  Then apply rest of the files from kubernetes folder using ```kubectl apply -f kubernetes/```
+4.  Now check if everything is up and running on our namespace using ```kubectl get all -n cicd-java-maven```
+5.  And make sure our application pod is up and running ```kubectl get pods -n cicd-java-maven```
 
 ### Now how to access the application over browser ????
 
