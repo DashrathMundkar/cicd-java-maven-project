@@ -17,4 +17,21 @@ This is simple java-maven project for cicd enviroment such as kubernetes using j
 5. Access the application on ```localhost:8080```
 
 
+### How to run application and access on kubenetes 
 
+1.  First create namesapce ```kubectl apply -f kubernetes/namespace.yaml```
+2.  Then apply rest of the file using from kubernetes folder using ```kubectl apply -f kubernetes/```
+3.  Now check if everything is up and running on our namespace using ```kubectl get all -n cicd-java-maven```
+4.  And make sure our application pod is up and running ```kubectl get pods -n cicd-java-maven```
+
+Now how to access the application over browser ????
+
+1. We need to deploy the ingress-controller for that bu applying the yaml file from this official documentation 
+ 
+    ```kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.2/deploy/static/provider/cloud/deploy.yaml```
+    
+2. Check everything is up and running on ```kubectl get all -n ingress-nginx``` if everything is up and running then we are good to go.
+
+3. Now edit your hosts file from this location  ```sudo vim /etc/hosts``` and add the entry in it ```127.0.0.1 exmaple-test.com```
+
+4. Now access the application on browser ```exmaple-test.com``` now you should see our awesome project text.
