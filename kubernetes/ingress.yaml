@@ -6,12 +6,8 @@ metadata:
   name: cicd-java-maven
   namespace: cicd-java-maven
 spec:
-  tls:
-  - hosts:
-    - marcel.test
-    secretName: marcel-tls-secret
   rules:
-    - host: marcel.test
+    - host: dashrath-test.com
       http:
         paths:
           - pathType: Prefix
