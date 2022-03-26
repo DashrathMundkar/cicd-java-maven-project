@@ -32,7 +32,7 @@ This is very basic/simple java-maven project for cicd environment and the purpos
     
 2. Check everything is up and running on ```kubectl get all -n ingress-nginx``` if everything is up and running then we are good to go.
 
-3. Now edit your hosts file from this location on Windows ```C:\Windows\System32\drivers\etc\hosts``` and on Mac/Lnux ```sudo vim /etc/hosts``` and add the entry in it ```127.0.0.1 exmaple-test.com```
+3. Now edit your hosts file from this location on Windows ```C:\Windows\System32\drivers\etc\hosts``` and on Mac/Linux ```sudo vim /etc/hosts``` and add the entry in it ```127.0.0.1 exmaple-test.com```
 
 4. Now access the application on browser ```exmaple-test.com``` now you should see our awesome project text.
 
