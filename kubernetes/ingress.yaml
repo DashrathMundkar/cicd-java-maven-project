@@ -1,11 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
   name: cicd-java-maven
   namespace: cicd-java-maven
 spec:
+  tls:
+  - hosts:
+    - marcel.test
+    secretName: marcel-tls-secret
   rules:
-    - host: "example.com"
+    - host: marcel.test
       http:
         paths:
           - pathType: Prefix
