@@ -3,7 +3,7 @@
 # cicd-java-maven-project
 This is simple java-maven project for cicd enviroment such as kubernetes using jenkins,sonarQube etc.
 
-### Build and deploy locally 
+## Build and deploy locally 
 
 1. ```mvn clean install```
 
@@ -17,7 +17,7 @@ This is simple java-maven project for cicd enviroment such as kubernetes using j
 5. Access the application on ```localhost:8080```
 
 
-### How to run application and access on kubenetes 
+## How to build and deploy on Kubernetes 
 
 1.  First create namesapce ```kubectl apply -f kubernetes/namespace.yaml```
 2.  Then apply rest of the file using from kubernetes folder using ```kubectl apply -f kubernetes/```
@@ -26,7 +26,7 @@ This is simple java-maven project for cicd enviroment such as kubernetes using j
 
 Now how to access the application over browser ????
 
-1. We need to deploy the ingress-controller for that bu applying the yaml file from this official documentation 
+1. We need to deploy the ingress-controller for that by applying the yaml file from this official documentation 
  
     ```kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.2/deploy/static/provider/cloud/deploy.yaml```
     
