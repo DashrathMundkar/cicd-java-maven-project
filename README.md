@@ -24,7 +24,7 @@ This is very basic/simple java-maven project for cicd environment and the purpos
 4.  Now check if everything is up and running on our namespace using ```kubectl get all -n cicd-java-maven```
 5.  And make sure our application pod is up and running ```kubectl get pods -n cicd-java-maven```
 
-### Now how to access the application over browser ????
+### Ok but how to access the application over browser ????
 
 1. We need to deploy the ingress-controller for that by applying the yaml file from this official documentation 
  
