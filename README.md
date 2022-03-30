@@ -26,6 +26,8 @@ This is very basic/simple java-maven project for cicd environment and the purpos
 
 ### Ok but how to access the application over browser ????
 
+I assume you have either ```docker dekstop``` or ```kind cluster``` or ```minikube```
+
 1. We need to deploy the ingress-controller for that by applying the yaml file from this official documentation 
  
     ```kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.2/deploy/static/provider/cloud/deploy.yaml```
