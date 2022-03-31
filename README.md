@@ -3,7 +3,7 @@
 # cicd-java-maven-project
 This is very basic/simple java-maven project for cicd environment and the purpose of the project is to showcase how to ship application from development to kubernetes environment using CICD.
 
-## Build and deploy locally 
+## Build and deploy locally using docker
 
 1. ```mvn clean install```
 
